@@ -83,3 +83,17 @@ for (let i = 0; i < images.length; i++) {
 }
 
 gallery.insertAdjacentHTML('beforeend', items.join(''));
+
+const onGalleryClick = e => {
+  e.preventDefault();
+
+  const target = e.target;
+
+  if (!target.classList.contains('gallery-image')) return;
+
+  basicLightbox
+    .create(`<img src="${target.dataset.source}" alt="${target.alt}">`)
+    .show();
+};
+
+gallery.addEventListener('click', onGalleryClick);

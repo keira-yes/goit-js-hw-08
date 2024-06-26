@@ -13,6 +13,11 @@
 
 .gallery-link {
   display: flex;
+  transition: transform 0.3s ease;
+}
+
+.gallery-link:hover {
+  transform: scale(1.04);
 }
 
 .gallery-image {
